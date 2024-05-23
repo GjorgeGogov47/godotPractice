@@ -1,38 +1,38 @@
 [gd_scene load_steps=9 format=3 uid="uid://j48aajxvsleg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ihxxr"]
-[ext_resource type="Texture2D" uid="uid://d36gsfuiw4b4d" path="res://assets/sprites/knight.png" id="1_juagm"]
+[ext_resource type="Texture2D" uid="uid://d36gsfuiw4b4d" path="res://assets/sprites/knight.png" id="2_66ejs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w0luk"]
-atlas = ExtResource("1_juagm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns4c7"]
+atlas = ExtResource("2_66ejs")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hd1j8"]
-atlas = ExtResource("1_juagm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvft6"]
+atlas = ExtResource("2_66ejs")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_niakb"]
-atlas = ExtResource("1_juagm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xer1b"]
+atlas = ExtResource("2_66ejs")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cbxlr"]
-atlas = ExtResource("1_juagm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_inmsg"]
+atlas = ExtResource("2_66ejs")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5uj0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w0luk")
+"texture": SubResource("AtlasTexture_ns4c7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hd1j8")
+"texture": SubResource("AtlasTexture_hvft6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_niakb")
+"texture": SubResource("AtlasTexture_xer1b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cbxlr")
+"texture": SubResource("AtlasTexture_inmsg")
 }],
 "loop": true,
 "name": &"idle",
@@ -50,6 +50,7 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_k5uj0")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.837133
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
