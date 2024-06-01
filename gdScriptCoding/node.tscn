@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://bqpcumsimpsav"]
+
+[ext_resource type="Script" path="res://helloWorld_input.gd" id="1_0qodg"]
+[ext_resource type="Script" path="res://variables.gd" id="2_jl0pk"]
+[ext_resource type="Script" path="res://variablesTwo.gd" id="3_vmrpo"]
+[ext_resource type="Script" path="res://functions.gd" id="4_ienhb"]
+[ext_resource type="Script" path="res://randomNumbers.gd" id="5_ovb6o"]
+[ext_resource type="Script" path="res://arrays.gd" id="6_y3tnr"]
+[ext_resource type="Script" path="res://dictionaries.gd" id="7_pvppv"]
+[ext_resource type="Script" path="res://enums.gd" id="8_ga01h"]
+[ext_resource type="Script" path="res://modifyNodes2.gd" id="9_p4lxk"]
+[ext_resource type="Script" path="res://signals.gd" id="10_viws8"]
+[ext_resource type="Script" path="res://getterino.gd" id="12_o8ijd"]
+[ext_resource type="Script" path="res://setterino.gd" id="12_s6dvu"]
+[ext_resource type="Script" path="res://Character.gd" id="13_3kreh"]
+[ext_resource type="Script" path="res://classes.gd" id="13_cg3m8"]
+
+[node name="Main" type="Node"]
+
+[node name="helloWorld_input" type="Node" parent="."]
+script = ExtResource("1_0qodg")
+
+[node name="Label" type="Label" parent="helloWorld_input"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.0
+offset_top = -279.0
+offset_right = 310.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 76
+text = "THIS IS A LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="variables" type="Node" parent="."]
+script = ExtResource("2_jl0pk")
+
+[node name="variablesTwo" type="Node" parent="."]
+script = ExtResource("3_vmrpo")
+
+[node name="functions" type="Node" parent="."]
+script = ExtResource("4_ienhb")
+
+[node name="randomNumbers" type="Node" parent="."]
+script = ExtResource("5_ovb6o")
+
+[node name="arrays_loops" type="Node" parent="."]
+script = ExtResource("6_y3tnr")
+
+[node name="dictionaries" type="Node" parent="."]
+script = ExtResource("7_pvppv")
+
+[node name="enums" type="Node" parent="."]
+script = ExtResource("8_ga01h")
+
+[node name="modifyNodes2" type="Node" parent="."]
+script = ExtResource("9_p4lxk")
+
+[node name="Player" type="Node" parent="modifyNodes2"]
+
+[node name="Graphics" type="Sprite2D" parent="modifyNodes2/Player"]
+
+[node name="Weapon" type="Sprite2D" parent="modifyNodes2/Player"]
+
+[node name="Enemy" type="Node" parent="modifyNodes2"]
+
+[node name="signals" type="Node" parent="."]
+script = ExtResource("10_viws8")
+
+[node name="Button" type="Button" parent="signals"]
+visible = false
+offset_left = 7.0
+offset_top = 367.0
+offset_right = 355.0
+offset_bottom = 476.0
+theme_override_font_sizes/font_size = 50
+text = "PRINT MONEY"
+
+[node name="Timer" type="Timer" parent="signals"]
+autostart = true
+
+[node name="getSet" type="Node" parent="."]
+
+[node name="getterino" type="Node" parent="getSet"]
+script = ExtResource("12_o8ijd")
+
+[node name="setterino" type="Node" parent="getSet"]
+script = ExtResource("12_s6dvu")
+
+[node name="classes" type="Node" parent="."]
+script = ExtResource("13_cg3m8")
+
+[node name="Character" type="Node" parent="classes"]
+script = ExtResource("13_3kreh")
+
+[node name="Character2" type="Node" parent="classes"]
+script = ExtResource("13_3kreh")
+
+[node name="Character3" type="Node" parent="classes"]
+script = ExtResource("13_3kreh")
+
+[connection signal="pressed" from="signals/Button" to="signals" method="_on_button_pressed"]
+[connection signal="timeout" from="signals/Timer" to="signals" method="_on_timer_timeout"]
